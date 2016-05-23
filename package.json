@@ -1,0 +1,32 @@
+{
+  "name": "clout-redis-session",
+  "version": "0.0.1",
+  "description": "Clout module to leverage Redis for sessions",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clout-js-modules/clout-redis-session.git"
+  },
+  "keywords": [
+    "clout",
+    "clout-js",
+    "clout-js",
+    "module",
+    "redis",
+    "express"
+  ],
+  "author": "Muhammad Dadu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clout-js-modules/clout-redis-session/issues"
+  },
+  "homepage": "https://github.com/clout-js-modules/clout-redis-session#readme",
+  "dependencies": {
+    "connect-redis": "^3.0.2",
+    "debug": "^2.2.0",
+    "express-session": "^1.13.0"
+  }
+}
