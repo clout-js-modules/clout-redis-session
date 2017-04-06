@@ -14,9 +14,9 @@ module.exports = {
 		override: true,
 		priority: 'MIDDLEWARE',
 		fn: function (next) {
-			var sessionConf = this.config.session,
-				sessRedisConf = this.config.session.redis,
-				redisConf = this.config.redis;
+			var sessionConf = this.config.session || {},
+				sessRedisConf = this.config.session.redis || {},
+				redisConf = this.config.redis || {};
 
 			!sessionConf.key && (sessionConf.key = 'express.sid');
 			!sessionConf.saveUninitialized && (sessionConf.saveUninitialized = false);
