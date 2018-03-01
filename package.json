@@ -1,6 +1,6 @@
 {
   "name": "clout-redis-session",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Clout module to leverage Redis for sessions",
   "main": "index.js",
   "scripts": {
