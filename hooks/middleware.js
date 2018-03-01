@@ -14,9 +14,9 @@ module.exports = {
 		override: true,
 		priority: 'MIDDLEWARE',
 		fn: function (next) {
-			var sessionConf = this.config.session || {},
-				sessRedisConf = this.config.session.redis || {},
-				redisConf = this.config.redis || {};
+			let sessionConf = this.config.session || {};
+			let sessRedisConf = this.config.session.redis || {};
+			let redisConf = this.config.redis || {};
 
 			!sessionConf.key && (sessionConf.key = 'express.sid');
 			!sessionConf.saveUninitialized && (sessionConf.saveUninitialized = false);
@@ -37,6 +37,15 @@ module.exports = {
 			this.app.session = session(sessionConf);
 			this.app.use(this.app.session);
 			next();
+		}
+	},
+	closeSession: {
+        event: 'stop',
+		priority: 1,
+		fn(next) {
+            this.config.session.store.client.quit();
+
+            next();
 		}
 	}
 };
